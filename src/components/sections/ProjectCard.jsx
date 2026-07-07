@@ -15,7 +15,9 @@ import { fadeInUp } from '@/utils/animations'
  */
 export function ProjectCard({ project }) {
   const { id, title, description, tech, demoUrl, repoUrl, screenshots } = project
-  const cover = screenshots?.[0]?.src
+  // Para la portada preferimos una captura horizontal (navegador); las
+  // verticales del móvil se recortarían mal en el encabezado de la tarjeta.
+  const cover = (screenshots?.find((shot) => shot.device !== 'phone') ?? screenshots?.[0])?.src
   const detailUrl = `/proyecto/${id}`
 
   return (

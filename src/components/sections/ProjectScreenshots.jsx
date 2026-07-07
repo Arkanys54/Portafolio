@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { Image as ImageIcon, ChevronLeft, ChevronRight } from 'lucide-react'
 import { Lightbox } from '@/components/ui/Lightbox'
+import { PhoneFrame } from '@/components/ui/PhoneFrame'
+import { BrowserFrame } from '@/components/ui/BrowserFrame'
 
 const AUTOPLAY_MS = 3500
 
@@ -61,25 +63,30 @@ export function ProjectScreenshots({ screenshots }) {
           >
             <div
               ref={trackRef}
-              className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-1"
+              className="no-scrollbar flex snap-x snap-mandatory items-end gap-6 overflow-x-auto scroll-smooth px-1 pb-2"
             >
-              {screenshots.map((shot, i) => (
-                <button
-                  key={shot.src}
-                  type="button"
-                  data-slide
-                  onClick={() => openLightbox(i)}
-                  aria-label={`Ampliar: ${shot.alt}`}
-                  className="w-[88%] shrink-0 snap-center overflow-hidden rounded-xl border border-slate-200 shadow-sm sm:w-[70%] lg:w-[60%] dark:border-white/10"
-                >
-                  <img
-                    src={shot.src}
-                    alt={shot.alt}
-                    loading="lazy"
-                    className="w-full cursor-zoom-in transition-transform duration-300 hover:scale-[1.02]"
-                  />
-                </button>
-              ))}
+              {screenshots.map((shot, i) => {
+                const Frame = shot.device === 'phone' ? PhoneFrame : BrowserFrame
+                return (
+                  <button
+                    key={shot.src}
+                    type="button"
+                    data-slide
+                    onClick={() => openLightbox(i)}
+                    aria-label={`Ampliar: ${shot.alt}`}
+                    className="shrink-0 snap-center rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+                  >
+                    <Frame>
+                      <img
+                        src={shot.src}
+                        alt={shot.alt}
+                        loading="lazy"
+                        className="size-full cursor-zoom-in object-cover transition-transform duration-500 hover:scale-105"
+                      />
+                    </Frame>
+                  </button>
+                )
+              })}
             </div>
 
             {/* Flechas de navegación */}

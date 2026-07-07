@@ -3,6 +3,7 @@ import { socials } from '@/data/socials'
 import { Card } from '@/components/ui/Card'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { ContactForm } from './ContactForm'
+import { ContactMethod } from './ContactMethod'
 import { fadeInUp, revealOnView } from '@/utils/animations'
 
 export function Contact() {
@@ -24,24 +25,8 @@ export function Contact() {
             <h3 className="font-display text-lg font-semibold text-slate-800 dark:text-slate-100">
               Información de contacto
             </h3>
-            {socials.map(({ id, label, handle, href, icon: Icon }) => (
-              <a
-                key={id}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-4"
-              >
-                <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-primary to-accent text-white transition-transform group-hover:scale-105">
-                  <Icon className="size-5" />
-                </span>
-                <span>
-                  <span className="block text-xs text-slate-400">{label}</span>
-                  <span className="block text-sm font-medium text-slate-700 group-hover:text-accent dark:text-slate-200">
-                    {handle}
-                  </span>
-                </span>
-              </a>
+            {socials.map((social) => (
+              <ContactMethod key={social.id} {...social} />
             ))}
           </Card>
         </motion.div>
