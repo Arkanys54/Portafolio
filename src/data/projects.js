@@ -59,7 +59,7 @@ export const projects = [
       'Panel de administración web (React)',
     ],
     credentials: [
-      { role: 'Admin (panel web + app)', email: 'admin@demo.com', password: 'Admin123*' },
+      { role: 'Panel de administración web', email: 'admin@demo.com', password: 'Admin123*' },
       { role: 'Usuario (app móvil)', email: 'usuario@demo.com', password: 'Usuario123*' },
     ],
     screenshots: [
