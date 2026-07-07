@@ -9,7 +9,7 @@ export const personal = {
   intro:
     'Apasionado por crear soluciones innovadoras mediante código limpio y eficiente. Desarrollo web y móvil full-stack con tecnologías modernas.',
   photo: heroImg,
-  resumeUrl: '/JuanSebastian_LoazadaCeballos_CV.docx',
+  resumeUrl: '/JuanSebastian_LozadaCeballos.pdf',
   email: 'juansebaslc54@gmail.com',
   phone: '+57 3132871763',
   location: 'Florencia, Caquetá, Colombia',
