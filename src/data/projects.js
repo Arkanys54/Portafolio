@@ -7,6 +7,14 @@
  * Para añadir capturas: coloca imágenes en src/assets/images e impórtalas
  * en el array `screenshots` (cada item: { src, alt }).
  */
+import guiasAppHome from '@/assets/images/guias-app-home.webp'
+import guiasAppBusqueda from '@/assets/images/guias-app-busqueda.webp'
+import guiasAppAlgoritmos from '@/assets/images/guias-app-algoritmos.webp'
+import guiasAppAlertas from '@/assets/images/guias-app-alertas.webp'
+import guiasAppAsistente from '@/assets/images/guias-app-asistente.webp'
+import guiasAdminGuias from '@/assets/images/guias-admin-guias.webp'
+import guiasAdminCasos from '@/assets/images/guias-admin-casos.webp'
+import guiasAdminAlgoritmos from '@/assets/images/guias-admin-algoritmos.webp'
 import lingualeapInicio from '@/assets/images/lingualeap-inicio.webp'
 import lingualeapNiveles from '@/assets/images/lingualeap-niveles.webp'
 import lingualeapTemas from '@/assets/images/lingualeap-temas.webp'
@@ -54,7 +62,16 @@ export const projects = [
       { role: 'Admin (panel web + app)', email: 'admin@demo.com', password: 'Admin123*' },
       { role: 'Usuario (app móvil)', email: 'usuario@demo.com', password: 'Usuario123*' },
     ],
-    screenshots: [],
+    screenshots: [
+      { src: guiasAppHome, alt: 'App móvil — pantalla de inicio de guías clínicas' },
+      { src: guiasAppBusqueda, alt: 'App móvil — búsqueda inteligente' },
+      { src: guiasAppAlgoritmos, alt: 'App móvil — algoritmos clínicos' },
+      { src: guiasAppAlertas, alt: 'App móvil — alertas clínicas' },
+      { src: guiasAppAsistente, alt: 'App móvil — asistente clínico' },
+      { src: guiasAdminGuias, alt: 'Panel admin — gestión de guías' },
+      { src: guiasAdminCasos, alt: 'Panel admin — casos clínicos' },
+      { src: guiasAdminAlgoritmos, alt: 'Panel admin — editor de algoritmos clínicos' },
+    ],
     note: 'El panel web y la API están en el plan gratuito de Render: la primera carga tras inactividad puede tardar ~50 s en “despertar”. La app móvil se distribuye como APK (compilado con EAS).',
     links: [
       { label: 'API en vivo (Swagger)', url: 'https://guias-clinicas-api.onrender.com/swagger' },
